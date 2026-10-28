@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.3",
+  "info": {"title": "Orders API", "version": "1.0.0"},
+  "paths": {
+    "/orders/{id}": {
+      "get": {
+        "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string"}}],
+        "responses": {
+          "200": {"description": "Order", "content": {"application/json": {"schema": {"type": "object", "properties": {"id": {"type": "string"}, "customer_email": {"type": "string"}, "quantity": {"type": "integer"}}, "required": ["id", "customer_email"]}}}}
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "properties": {"product_id": {"type": "integer"}, "quantity": {"type": "integer"}}, "required": ["product_id"]}}}},
+        "responses": {"201": {"description": "Created"}}
+      }
+    }
+  }
+}
