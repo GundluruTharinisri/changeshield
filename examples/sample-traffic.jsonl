@@ -1,0 +1,3 @@
+{"method":"GET","path":"/orders/123","expected_status":200}
+{"method":"GET","path":"/orders/404","expected_status":404}
+{"method":"POST","path":"/orders","expected_status":201,"body":{"product_id":10,"quantity":2}}
